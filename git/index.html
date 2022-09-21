@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Password Strength Checker</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <title>How Secure Is My Password? | Password Strength Checker</title>
+</head>
+
+<body class=" ">
+    <!------------------------ NAVBAR-------------------------------->
+    <nav class="navbar   flex justify-around ">
+        <img class="mx-3 px-3 my-2 pt-4 h-20  inline-flex " src="logo3.jpg" alt="IoT M@$TER" srcset="">
+
+        <ul class="navelements flex texr  space-x-3 items-center uppercase">
+            <li class="mx-4 my-2 px-4 py-3 "><a class=" hover:text-gray-500 " href="#"> Home</a></li>
+            <li class="mx-3 my-2 px-2"><a class=" hover:text-gray-500 " href="aboutus.html"> About</a></li>
+            <li class="mx-3 my-2 px-2"><a class=" hover:text-gray-500 " href="team.html"> Team</a></li>
+            <li class="mx-3 my-2 px-2"><a class=" hover:text-gray-500 " href="faq.html"> FAQ's</a></li>
+            <li class="mx-3 my-2 px-2"><a class=" hover:text-gray-500 " href="contact.html"> Contact Us </a></li>
+
+        </ul>
+        <button
+            class="justify-items-end mx-10 my-8 border-2 px-3 py-2 hover:bg-sky-700   hover:text-gray-50 rounded-lg "><a
+                href="index2.html">
+                Login
+        </button></a>
+
+    </nav>
+
+    <!-- text -->
+    <div class="front h-2/3 bg-sky-700">
+        <p class="text  text-center text-5xl font-sans text-white font-bold pt-7">
+            How Secure Is My Password?
+        </p>
+        <p class="second justify-center flex text-yellow-50 text-xl font-bold font-sans pb-5 mt-5 mb-5">
+            <img src="tick3.png" alt="" class="h-7 mr-2  w-7 " srcset="">
+            The #1 Password Strength Tool. Trusted and used by millions.
+        </p>
+        <div class="maincontent">
+            <div class="wrapper">
+                <div class="container">
+                    <input type="password" id="password" oninput="strengthChecker()">
+                    <span id="toggle" onclick="toggle()">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    <div id="strength-bar"></div>
+                </div>
+                <p id="msg"></p>
+            </div>
+        </div>
+      <a href="random.html">  <p class="second justify-center flex text-yellow-50 text-xl  font-bold font-sans pb-5 mt-52 mb-5">
+            
+           Click here to create a Random Password
+        </p>
+      </a>
+    </div>
+
+
+
+    <!-- Main code -->
+    <hr class="h-3 ">
+
+
+
+
+
+    <p class="text bg-white text-base px-7 ml-32 mr-36 font-normal font-sans  ">
+        <a href="https://www.security.org/identity-theft/what-is-a-data-breach/" class="text-sky-500">Data breaches</a>
+        and <a href="https://www.security.org/identity-theft/" class="text-sky-500">identity theft</a> are on the rise,
+        and the cause is often compromised passwords. After stealing
+        credentials, cybercriminals can use passwords to start disinformation campaigns against companies, use people's
+        payment information for purchases, and spy on users through <a
+            href="https://www.security.org/security-cameras/best/" class="text-sky-500">WiFi-connected security
+            cameras</a>. We built this tool
+        to help you better understand password security.
+    </p>
+
+    <!--  HOW to create passwords -->
+
+
+
+    <div class="Heading mt-11 ">
+        <h1 class="hedding font-sans ml-96 uppercase pt-16 text-4xl  mb-16 text-purple-500 font-extrabold">
+            How To Create Secure Passwords
+        </h1>
+    </div>
+
+    <div class="text bg-orange-300   px-5 pt-5 pb-5 mb-10 mx-96 my-5 ml-80 pl-14 font-normal  rounded-xl ">
+        The best practices for creating secure passwords are:
+    </div>
+    <div class="rai mr-20 ml-20">
+        <div class="right partcontent space-x-3 flex">
+            <div class="fist bg-sky-300 pt-3 pr-3 pl-3 pb-5 h-40 w-1/3 rounded-xl ">
+
+                <p>
+                    A password should be 16 characters or more; our password-related research has found that 45 percent
+                    of Americans use passwords of eight characters or less, which are not as secure as longer passwords.
+                </p>
+            </div>
+            <div class="second bg-red-300 pt-3 pr-3 pl-3 pb-9 h-40 w-1/3 rounded-xl ">
+
+                <p class=>
+                    A password should include a combination of letters, numbers, and characters.
+                </p>
+            </div>
+            <div class="third  bg-green-300 pt-3 pr-3 pl-3 pb-5 h-40 w-1/3 rounded-xl ">
+
+                <p>
+                    A password shouldn’t include any of the user’s personal information like their address or phone
+                    number. It’s also best not to include any information that can be accessed on social media like
+                    kids’ or pets’ names.
+
+                </p>
+            </div>
+        </div>
+        <div class="right partcontent space-x-3  mt-5 flex">
+            <div class="fist bg-sky-300 pt-3 pr-3 pl-3 pb-5   h-28 w-1/3 rounded-xl ">
+
+                <p>
+                    A password shouldn’t be shared with any other account.
+                </p>
+            </div>
+            <div class="second bg-red-300 pt-3 pr-3 pl-3 pb-5  h-28 w-1/3 rounded-xl ">
+
+                <p>
+                    A password shouldn’t contain any consecutive letters or numbers.
+                </p>
+            </div>
+            <div class="third  bg-green-300 pt-3 pr-3 pl-3 pb-5  h-28 w-1/3 rounded-xl ">
+
+                <p>
+                    A password shouldn’t be the word “password” or the same letter or number repeated.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="linne mx-10 my-10 outline-2">
+
+
+
+    <div class="howtocreate ml-32">
+
+        <!-- Why is password security important -->
+        <div class="Heading mt-20 ml-5  ">
+            <h1 class="hedding font-sans ml-48 uppercase pt-16 text-4xl  mb-16 text-purple-500 font-extrabold">
+                Why is password security important?
+            </h1>
+        </div>
+
+
+
+
+        <div class="text bg-orange-300   px-5 py-2 pt-5 pb-5 mb-10 mx-96   my-5 ml-56 pl-14 font-normal  rounded-xl ">
+            Not having secure passwords has its consequences, which include but are not limited to:
+        </div>
+        <div class="rai mr-20  ml-10 ">
+            <div class="right partcontent space-x-5  mr-20 flex">
+                <div class="fist bg-sky-300 pt-3 pr-3 pl-3 pb-5 h-52 w-1/3 rounded-xl ">
+
+                    <p>
+                        After gaining access to a user’s credentials, many hackers will log into their accounts to steal
+                        more of their personally identifiable information (PII) like their names, addresses, and bank
+                        account information. They will use this information either to steal money from the user directly
+                        or to steal their identity.
+                    </p>
+                </div>
+                <div class="second bg-red-300 pt-3 pr-3 pl-3 pb-9 h-52 w-1/3 rounded-xl ">
+
+                    <p>
+                        Lack of privacy. Criminals are adept at tricking social media users into handing over sensitive
+                        information, stealing personal data, and gaining access to accounts users consider private.
+                    </p>
+                </div>
+                <div class="third  bg-green-300 pt-3 pr-3 pl-3 pb-5 h-52 w-1/3 rounded-xl ">
+
+                    <p>
+                        For businesses, hackers can start disinformation campaigns against companies, sharing their data
+                        with competitors and storing it for a ransom.
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <hr class="linne mx-10 my-10 outline-2">
+
+
+    <!-- OTher ways -->
+
+    <div class="Heading mt-20 ">
+        <h1 class="hedding font-sans text-center uppercase pt-16 text-4xl  mb-20 text-purple-500 font-extrabold">
+            Other Ways To Protect Yourself Online
+        </h1>
+    </div>
+
+
+
+    <!-- <div class="left imag flex">
+                    <img src="grrowing.jpg"  class="" alt="" srcset="">
+                </div> -->
+    <div class="text bg-orange-300   px-5 py-2 pt-5 pb-5 mb-10 mx-96 my-5 ml-96 pl-14 font-normal  rounded-xl ">
+        Aside from creating secure and unique passwords for all web accounts, there are other best
+        practices to increase one’s digital security
+    </div>
+    <div class="rai mr-20 ml-20">
+        <div class="right partcontent space-x-3 flex">
+            <div class="fist bg-sky-300 pt-3 pr-3 pl-3 pb-5 h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3   ">1.Use a VPN:
+                </h1>
+                <p>
+                    While passwords keep unauthorized users out of accounts, Internet Service Providers can
+                    still track a user’s online activity as well as their devices’ private IP addresses. The
+                    only way to hide web activity and IP addresses is to connect not directly to a public
+                    Wi-Fi network, but instead to a VPN
+                </p>
+            </div>
+            <div class="second bg-red-300 pt-3 pr-3 pl-3 pb-9 h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3 ">2. Get identity theft
+                    protection:
+                </h1>
+                <p class="pb-9">
+                    While a strong password can go a long way in protecting online accounts, there’s no
+                    single action that can protect a user’s personally identifiable information from
+                    identity theft. Rather, top identity theft protection software monitors key criminal and
+                    financial areas for users’ personal information.
+                </p>
+            </div>
+            <div class="third  bg-green-300 pt-3 pr-3 pl-3 pb-5 h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3 ">3. Install a home security system:
+                </h1>
+                <p>
+                    Users can protect their homes and families with top-rated home security systems.
+                </p>
+            </div>
+        </div>
+        <div class="right partcontent space-x-3  mt-5 flex">
+            <div class="fist bg-sky-300 pt-3 pr-3 pl-3 pb-5   h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3 ">4. Use a VPN:
+                </h1>
+                <p>
+                    Antivirus software scans computers, phones, and tablets for malware, viruses, ransomware,
+                    spyware, and other cyber threats.
+                </p>
+            </div>
+            <div class="second bg-red-300 pt-3 pr-3 pl-3 pb-5  h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3 ">5. Use a password manager:
+                    protection:
+                </h1>
+                <p>
+                    Password managers store users’ usernames and passwords in encrypted vaults, requiring only
+                    master passwords or biometrics to log into accounts.
+                </p>
+            </div>
+            <div class="third  bg-green-300 pt-3 pr-3 pl-3 pb-5  h-52 w-1/3 rounded-xl ">
+                <h1 class=" text-xl font-sans font-bold from-slate-900 mb-3 ">6. Only change passwords when
+                    needed:
+                </h1>
+                <p>
+                    It’s a myth that users should change their passwords in regular intervals. Rather, it’s only
+                    necessary to change passwords if the account itself is compromised, according to recent
+                    reports.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="linne mx-10 my-10 outline-2">
+    <!-- FAQ's -->
+    <!-- ---------------------------------------------Testinomial---------------------------------------------- -->
+    <p class="testinomilas text-center font-extrabold text-2xl my-96 mt-10 mb-8 "> Testimonials </p>
+    <div class="testinomials flex ">
+        <div class="left flex mx-5 my-5 rounded-lg bg-slate-200">
+            <p class="first mx-6 my-6">
+                <img src="quotes.png" class=" h-5 mt-5 mb-12 " alt="" srcset="">
+                I don't have words to thank this man, I'm really grateful to have this channel and website in my daily
+                routine. If you're a mere beginner, then you can trust this guy and can put your time into his content.
+                I can assure you that it'll be worth it.
+            </p>
+
+
+        </div>
+        <div class="right flex mx-5 my-5 rounded-lg bg-slate-200">
+            <p class="second mx-6 my-6">
+                <img src="quotes.png" class=" h-5 mt-5 mb-12 " alt="" srcset="">
+                For everyone who wants to level up their #Coding and #Dev skills - seriously, this channel is for you!
+                Both basic and advanced stacks are covered on this channel, and one can learn according to his skill
+                levels. And the icing on the cake is, everything is available for free.
+
+            </p>
+        </div>
+    </div>
+    <p class="lets text-center  text-2xl  font-bold ml-72 mx-56 mt-20 mb-32 ">
+        Thanks for giving us your precious time .
+    </p>
+
+    <hr class="linne mx-10 my-10 outline-2">
+    <!-- -----------------------------------Contact us  endbar ------------------- -->
+
+   
+    <!-- ---------------------------------------------------Footer ---------------------------------------------- -->
+    <div class="footer bg-black ">
+        <p class="fotter content-between mx-96 ">
+
+            <span class=" text-sky-50  mx-52"> © 2022 by Komal & Nitish, created with ❤</span>
+        </p>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+</body>
+
+
+</html>
